@@ -23,5 +23,5 @@ EOF
 
 yum clean all
 yum makecache
-yum install docker-ce docker-ce-cli --downloadonly --downloaddir=/tmp/docker-ce/
+yum install docker-ce docker-ce-cli mysql-community-server --downloadonly --downloaddir=/tmp/docker-ce/
 ```
