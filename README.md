@@ -13,7 +13,7 @@
 cat << EOF > /etc/yum.repos.d/EPKL.repo
 [EPKL]
 name = Kylin Linux Advanced Server 10 - Os
-baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/\$basearch/
+baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/$basearch/
 gpgcheck = 1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin
 enabled = 1
