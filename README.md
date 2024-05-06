@@ -8,7 +8,7 @@
 ```
 
 
-###麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
+### 麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
 ```javascript
 cat << EOF > /etc/yum.repos.d/EPKL.repo
 [EPKL]
