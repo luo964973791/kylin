@@ -10,13 +10,14 @@
 
 ###麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
 ```javascript
-cat EPKL.repo 
+cat << EOF > /etc/yum.repos.d/EPKL.repo
 [EPKL]
-name = Kylin Linux Advanced Server 10 - Os 
-baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/$basearch/
+name = Kylin Linux Advanced Server 10 - Os
+baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/\$basearch/
 gpgcheck = 1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin
 enabled = 1
+EOF
 
 
 
