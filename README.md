@@ -23,5 +23,6 @@ EOF
 
 yum clean all
 yum makecache
+yum install selinux-policy-targeted -y  #必须先安装，不然会报错.
 yum install docker-ce docker-ce-cli mysql-community-server --downloadonly --downloaddir=/tmp/docker-ce/
 ```
