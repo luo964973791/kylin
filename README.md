@@ -10,16 +10,17 @@
 
 ###麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
 ```javascript
-yum remove selinux-policy-ukmcs -y
-curl -o /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-8-reg.repo
+cat EPKL.repo 
+[EPKL]
+name = Kylin Linux Advanced Server 10 - Os 
+baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/$basearch/
+gpgcheck = 1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin
+enabled = 1
 
-# 配置华为docker 镜像源
-yum-config-manager --add-repo https://repo.huaweicloud.com/docker-ce/linux/centos/docker-ce.repo
-sed -i 's+download.docker.com+repo.huaweicloud.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
-echo "8" > /etc/yum/vars/centos_version
-sed -i 's/$releasever/$centos_version/g' /etc/yum.repos.d/docker-ce.repo
-sed -i 's/$releasever/$centos_version/g' /etc/yum.repos.d/CentOS-Base.repo
+
+
 yum clean all
 yum makecache
-yum install docker-ce-3:19.03.15-3.el8 --downloadonly --downloaddir=/tmp/docker-ce/
+yum install docker-ce docker-ce-cli --downloadonly --downloaddir=/tmp/docker-ce/
 ```
