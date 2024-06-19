@@ -10,7 +10,18 @@
 
 ### 麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
 ```javascript
-cat << EOF > /etc/yum.repos.d/EPKL.repo
+cat << EOF > /etc/yum.repos.d/mysql-8-0-24-EPKL.repo
+[EPKL]
+name = Kylin Linux Advanced Server 10 - Os
+baseurl = http://update.cs2c.com.cn/NS/V10/V10SP2/EPKL/\$basearch/
+gpgcheck = 1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin
+enabled = 1
+EOF
+yum install mysql-community-server --downloadonly --downloaddir=/tmp/mysql/
+
+
+cat << EOF > /etc/yum.repos.d/docker-ce-EPKL.repo
 [EPKL]
 name = Kylin Linux Advanced Server 10 - Os
 baseurl = http://update.cs2c.com.cn/NS/V10/V10SP3/EPKL/\$basearch/
@@ -20,9 +31,8 @@ enabled = 1
 EOF
 
 
-
 yum clean all
 yum makecache
 yum install selinux-policy-targeted -y  #必须先安装，不然会报错.
-yum install docker-ce docker-ce-cli mysql-community-server --downloadonly --downloaddir=/tmp/docker-ce/
+yum install docker-ce docker-ce-cli --downloadonly --downloaddir=/tmp/docker-ce/
 ```
