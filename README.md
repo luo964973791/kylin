@@ -19,6 +19,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin
 enabled = 1
 EOF
 yum install mysql-community-server --downloadonly --downloaddir=/tmp/mysql/
+wget https://downloads.mysql.com/archives/get/p/43/file/mysql-shell-8.0.24-linux-glibc2.12-x86-64bit.tar.gz
 
 
 cat << EOF > /etc/yum.repos.d/docker-ce-EPKL.repo
