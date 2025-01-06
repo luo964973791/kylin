@@ -10,6 +10,7 @@
 
 ### 麒麟v10 SP2 Kernel: 4.19.90-24.4.v2101.ky10.x86_64版本安装docker-ce
 ```javascript
+yum install kylin-epkl-repo -y
 cat << EOF > /etc/yum.repos.d/mysql-8-0-24-EPKL.repo
 [EPKL]
 name = Kylin Linux Advanced Server 10 - Os
